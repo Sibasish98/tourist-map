@@ -18,10 +18,13 @@ export type Spot = {
 
 export default function MapView({
   spots,
+  dimmed = false,
 }: {
-  spots: Spot[];
+  spots: Spot[],
+  dimmed?: boolean;
 }) {
   return (
+    <div className={dimmed ? "opacity-60" : ""}>
     <ComposableMap
       projection="geoMercator"
       projectionConfig={{
@@ -57,5 +60,6 @@ export default function MapView({
         </Marker>
       ))}
     </ComposableMap>
+    </div>
   );
 }

@@ -19,7 +19,7 @@ export default function IndiaClient({
       const json = await res.json();
       setData(json);
     }
-
+    if (!initialData)
     fetchCrowd();
   }, []);
 

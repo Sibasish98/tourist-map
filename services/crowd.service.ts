@@ -17,27 +17,37 @@ export type CrowdResponse = {
 
 const ai = new GeminiCrowdProvider();
 
+// export async function getCrowdData(
+//   year: number,
+//   month: string
+// ): Promise<CrowdResponse> {
+//   // mock logic for now
+ /// console.log("Fetching crowd data for hhhh");
+
+//   return {
+//     year,
+//     month,
+//     spots: [
+//       {
+//         name: "Okay",
+//         lat: 15.2993,
+//         lng: 74.124,
+//         weight: 0.9,
+//       },
+//       {
+//         name: "Manali",
+//         lat: 32.2432,
+//         lng: 77.1892,
+//         weight: 0.6,
+//       },
+//     ],
+//   };
+// }
+
+
 export async function getCrowdData(
   year: number,
   month: string
-): Promise<CrowdResponse> {
-  // mock logic for now
-  return {
-    year,
-    month,
-    spots: [
-      {
-        name: "Goa",
-        lat: 15.2993,
-        lng: 74.124,
-        weight: 0.9,
-      },
-      {
-        name: "Manali",
-        lat: 32.2432,
-        lng: 77.1892,
-        weight: 0.6,
-      },
-    ],
-  };
+) {
+  return ai.getCrowdPrediction({ year, month });
 }

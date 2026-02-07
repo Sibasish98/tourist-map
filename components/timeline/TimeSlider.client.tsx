@@ -5,9 +5,16 @@ import { TimelineCard } from "./timelinecard";
 import { YearSlider } from "./YearSlider";
 import { MonthSlider } from "./MonthSlider";
 
-export  function TimeSlider() {
-  const [year, setYear] = useState(2026);
-  const [month, setMonth] = useState(0);
+type TimeSliderProps = {
+  year: number;
+  month: number;
+  onChange?: (year: number, month: number) => void;
+  disabled?: boolean;
+};
+
+export  function TimeSlider({ year, month, onChange, disabled }: TimeSliderProps) {
+  // const [currentYear, setCurrentYear] = useState(year || 2026);
+  // const [currentMonth, setCurrentMonth] = useState(month || 0);
 
 
 // useEffect(() => {
@@ -27,8 +34,8 @@ export  function TimeSlider() {
         Explore Tourist Crowd
       </h3>
 
-      <YearSlider year={year} onChange={setYear} />
-      <MonthSlider month={month} onChange={setMonth} />
+      <YearSlider year={year} onChange={(newYear) => onChange && onChange(newYear, month)} />
+      <MonthSlider month={month} onChange={(newMonth) => onChange && onChange(year, newMonth)} />
 
       <div className="text-xs text-gray-600 pt-1">
         Selected: {year}, {month + 1}
