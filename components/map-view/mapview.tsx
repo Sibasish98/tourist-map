@@ -6,8 +6,11 @@ import {
   Geography,
   Marker,
 } from "react-simple-maps";
+import { useMapContext } from "react-simple-maps";
+
 import { getCrowdColor } from '@/lib/mapStyles'
 import SpotInfoCard from "../spot-info/SpotInfoCard";
+import MapOverlayBubble from "../spot-info/SpotInfoCard";
 
 const geoUrl = "/maps/india.geojson";
 
@@ -31,8 +34,8 @@ export default function MapView({
   setSelectedSpot: (spot: Spot | null) => void;
 }) {
   return (
-    <div className={dimmed ? "opacity-60" : ""}>
-    <ComposableMap
+<div className={`relative ${dimmed ? "opacity-60 relative" : ""}`}>
+      <ComposableMap
       projection="geoMercator"
       projectionConfig={{
         center: [82, 22],
@@ -72,14 +75,11 @@ export default function MapView({
           />
         </Marker>
       ))}
-      {selectedSpot && (
-        <Marker coordinates={[selectedSpot.lng, selectedSpot.lat]}>
-          <SpotInfoCard
-            spot={selectedSpot}
-            onClose={() => setSelectedSpot(null)}
-          />
-        </Marker>
-      )}
+        {selectedSpot && (
+          <Marker coordinates={[selectedSpot.lng, selectedSpot.lat]}>
+            <MapOverlayBubble spot={selectedSpot} />
+          </Marker>
+        )}
 
     </ComposableMap>
       

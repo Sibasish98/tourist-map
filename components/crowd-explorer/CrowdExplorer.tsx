@@ -37,6 +37,7 @@ export default function CrowdExplorer({ initialData } : { initialData: Spot[] })
 
   return (
     <div className="relative">
+      <div className="absolute z-20">
       <TimeSlider
         year={year}
         month={month}
@@ -45,6 +46,7 @@ export default function CrowdExplorer({ initialData } : { initialData: Spot[] })
         onChange={handleTimelineChange}
         disabled={loading}
       />
+      </div>
 
 
 

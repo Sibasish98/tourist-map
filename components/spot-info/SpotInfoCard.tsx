@@ -1,44 +1,36 @@
+import { getCrowdColor } from "@/lib/mapStyles";
 import { Spot } from "../map-view/mapview";
-type SpotInfoCardProps = {
-  spot: Spot;
-  onClose: () => void;
-};
 
-export default function SpotInfoCard({
-  spot,
-  onClose,
-}: SpotInfoCardProps) {
+export default function MapOverlayBubble({ spot }: { spot: Spot }) {
   return (
-    <g transform="translate(10,-70)">
-      {/* Background */}
-      <rect
-        width={180}
-        height={60}
-        rx={8}
-        fill="black"
-        opacity={0.9}
-      />
+    <foreignObject x={12} y={-90} width={240} height={140}>
+      <div className="relative backdrop-blur-md bg-gray-900/85 text-white 
+                      rounded-xl shadow-2xl px-4 py-3 
+                      border border-white/10 text-sm">
 
-      {/* Title */}
-      <text
-        x={10}
-        y={20}
-        fill="white"
-        fontSize={12}
-        fontWeight="bold"
-      >
-        {spot.name}
-      </text>
+        {/* Accent bar */}
+        <div
+          className="absolute left-0 top-0 h-full w-1 rounded-l-xl"
+          style={{ backgroundColor: getCrowdColor(spot.weight) }}
+        />
 
-      {/* Reason */}
-      <text
-        x={10}
-        y={38}
-        fill="white"
-        fontSize={10}
-      >
-        {spot.reason?.slice(0, 40)}...
-      </text>
-    </g>
+        <div className="pl-2">
+          <div className="font-semibold text-base">
+            {spot.name}
+          </div>
+
+          {spot.reason && (
+            <p className="mt-1 text-white/70 leading-snug">
+              {spot.reason}
+            </p>
+          )}
+        </div>
+
+        {/* Pointer */}
+        <div className="absolute left-6 bottom-[-6px] 
+                        w-3 h-3 bg-gray-900 rotate-45 
+                        border-r border-b border-white/10" />
+      </div>
+    </foreignObject>
   );
 }
