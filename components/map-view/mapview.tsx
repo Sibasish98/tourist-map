@@ -6,6 +6,7 @@ import {
   Geography,
   Marker,
 } from "react-simple-maps";
+import { getCrowdColor } from '@/lib/mapStyles'
 
 const geoUrl = "/maps/india.geojson";
 
@@ -55,7 +56,7 @@ export default function MapView({
         >
           <circle
             r={6 + spot.weight * 10}
-            fill="rgba(239, 68, 68, 0.6)"
+            fill={getCrowdColor(spot.weight)}
           />
         </Marker>
       ))}

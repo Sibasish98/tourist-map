@@ -9,6 +9,11 @@ export default function CrowdExplorer({ initialData } : { initialData: Spot[] })
   const [month, setMonth] = useState(0);
   const [spots, setSpots] = useState(initialData);
   const [loading, setLoading] = useState(false);
+  const [showOffBeatOnly, setShowOffBeatOnly] = useState(false);
+  const visibleSpots = showOffBeatOnly
+  ? spots.filter((spot) => spot.weight < 0.4)
+  : spots;
+
 
   async function handleTimelineChange(newYear:number, newMonth:number) {
     setYear(newYear);
@@ -24,16 +29,24 @@ export default function CrowdExplorer({ initialData } : { initialData: Spot[] })
     setLoading(false);
   }
 
+  function handleOffBeatToggle() {
+    setShowOffBeatOnly((prev) => !prev);
+  }
+
   return (
     <div className="relative">
       <TimeSlider
         year={year}
         month={month}
+        showOffBeatOnly={showOffBeatOnly}
+        onToggleOffBeat={handleOffBeatToggle}
         onChange={handleTimelineChange}
         disabled={loading}
       />
 
-      <MapView spots={spots} dimmed={loading} />
+
+
+      <MapView spots={visibleSpots} dimmed={loading} />
     </div>
   );
 }

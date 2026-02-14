@@ -7,13 +7,25 @@ export class GeminiCrowdProvider
   implements CrowdAIProvider {
 
   async getCrowdPrediction({ year, month } : { year: number; month: string; }) {
-    const prompt = `
-You are a travel data assistant.
+    const prompt = `You are a travel data assistant.
 
 Given:
 Year: ${year}
 Month: ${month}
 Country: India
+
+Return a balanced mix of:
+- Highly popular destinations
+- Moderately visited destinations
+- Lesser-known or off-beat destinations
+
+Crowd intensity (weight) must be a number between 0 and 1:
+- 0.0–0.3 → low crowd (off-beat)
+- 0.3–0.6 → moderate
+- 0.6–1.0 → high crowd
+
+Ensure there is a natural distribution across these ranges.
+Do not return only highly crowded places.
 
 Return ONLY valid JSON in this format:
 {
@@ -22,14 +34,12 @@ Return ONLY valid JSON in this format:
       "name": string,
       "lat": number,
       "lng": number,
-      "weight": number (0 to 1),
+      "weight": number,
       "reason": string
     }
   ]
 }
-
-Focus on major tourist destinations.
-`;
+`
 
     const res = await fetch(
       "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
