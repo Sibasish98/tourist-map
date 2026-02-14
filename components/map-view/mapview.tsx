@@ -35,12 +35,12 @@ export default function MapView({
   setSelectedSpot: (spot: Spot | null) => void;
 }) {
   return (
-<div className={`relative ${dimmed ? "opacity-60 relative" : ""}`}>
+<div className={`relative ${dimmed ? "opacity-60 relative" : ""} bg-[#344156]`}>
       <ComposableMap
       projection="geoMercator"
       projectionConfig={{
         center: [82, 22],
-        scale: 900,
+        scale: 2700,
       }}
       className="w-full h-full"
     >
@@ -51,8 +51,8 @@ export default function MapView({
             <Geography
               key={geo.rsmKey}
               geography={geo}
-              fill="#E5E7EB"
-              stroke="#374151"
+              fill="#a2a3a4"
+              stroke="#06080b"
             />
           ))
         }
