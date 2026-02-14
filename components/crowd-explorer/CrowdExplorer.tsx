@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { TimeSlider } from "@/components/timeline/TimeSlider.client";
 import MapView, { Spot } from "@/components/map-view/mapview";
+import LoadingOverlay from "../loading-overlay/LoadingOverlay";
 
 export default function CrowdExplorer({ initialData } : { initialData: Spot[] }) {
   const [year, setYear] = useState(2025);
@@ -51,6 +52,17 @@ export default function CrowdExplorer({ initialData } : { initialData: Spot[] })
 
 
       <MapView spots={visibleSpots} dimmed={loading} selectedSpot={selectedSpot} setSelectedSpot={setSelectedSpot} />
+
+      {loading && (
+        <div className="absolute inset-0 z-30 
+                  bg-black/30 backdrop-blur-sm
+                  flex items-center justify-center
+                  transition-opacity duration-300">
+
+          <LoadingOverlay />
+
+        </div>
+      )}
     </div>
   );
 }
