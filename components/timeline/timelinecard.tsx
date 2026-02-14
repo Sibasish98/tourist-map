@@ -11,7 +11,8 @@ export function TimelineCard({ children }: { children: React.ReactNode }) {
 
         rounded-2xl
         border border-white/10
-        shadow-[0_25px_60px_rgba(0,0,0,0.45)]
+        shadow-[0_20px_60px_rgba(0,0,0,0.45)]
+        overflow-hidden
 
         px-6 py-5
         space-y-4

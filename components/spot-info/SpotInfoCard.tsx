@@ -3,11 +3,15 @@ import { Spot } from "../map-view/mapview";
 
 export default function MapOverlayBubble({ spot }: { spot: Spot }) {
   return (
-    <foreignObject x={12} y={-90} width={240} height={140}>
-      <div className="relative backdrop-blur-md bg-gray-900/85 text-white 
-                      rounded-xl shadow-2xl px-4 py-3 
-                      border border-white/10 text-sm">
-
+    <foreignObject x={12} y={-90} width={220} height={300}>
+      <div
+        className="
+          relative backdrop-blur-md bg-gray-900/85 text-white
+          rounded-xl shadow-2xl px-3 py-2.5
+          border border-white/10 text-sm
+          w-[220px] max-w-[80vw]
+        "
+      >
         {/* Accent bar */}
         <div
           className="absolute left-0 top-0 h-full w-1 rounded-l-xl"
@@ -15,21 +19,25 @@ export default function MapOverlayBubble({ spot }: { spot: Spot }) {
         />
 
         <div className="pl-2">
-          <div className="font-semibold text-sm">
+          <div className="font-semibold text-[clamp(12px,1.2vw,14px)]">
             {spot.name}
           </div>
 
           {spot.reason && (
-            <p className="mt-1 text-white/70 leading-snug">
+            <p className="mt-1 text-white/70 leading-snug text-[clamp(12px,1.2vw,14px)]">
               {spot.reason}
             </p>
           )}
         </div>
 
         {/* Pointer */}
-        <div className="absolute left-6 bottom-[-6px] 
-                        w-3 h-3 bg-gray-900 rotate-45 
-                        border-r border-b border-white/10" />
+        <div
+          className="
+            absolute left-6 bottom-[-6px]
+            w-3 h-3 bg-gray-900 rotate-45
+            border-r border-b border-white/10
+          "
+        />
       </div>
     </foreignObject>
   );
