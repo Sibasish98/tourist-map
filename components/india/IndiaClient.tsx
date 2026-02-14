@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import MapView from "@/components/map-view/mapview";
+import MapView, { Spot } from "@/components/map-view/mapview";
 
 export default function IndiaClient({
   initialData,
@@ -25,7 +25,9 @@ export default function IndiaClient({
 
   return (
     <div className="relative h-screen w-full">
-      <MapView spots={data.spots} />
+      <MapView spots={data.spots} selectedSpot={null} setSelectedSpot={function (spot: Spot | null): void {
+        throw new Error("Function not implemented.");
+      } } />
     </div>
   );
 }
