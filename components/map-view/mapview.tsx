@@ -60,21 +60,41 @@ export default function MapView({
 
       {/* Tourist spots */}
       {spots.map((spot) => (
-        <Marker
-          key={spot.name}
-          coordinates={[spot.lng, spot.lat]}
-        >
-          <circle
-            r={
-              selectedSpot?.name === spot.name
-                ? 8 + spot.weight * 6
-                : 4 + spot.weight * 6
-            }
+       <Marker key={spot.name} coordinates={[spot.lng, spot.lat]}>
+  <g onClick={() => setSelectedSpot(spot)} style={{ cursor: "pointer" }}>
+   <circle
+  r={
+    selectedSpot?.name === spot.name
+      ? 8 + spot.weight * 6
+      : 4 + spot.weight * 6
+  }
+  onClick={() => setSelectedSpot(spot)}
+  fill={getCrowdColor(spot.weight)}
+  style={{
+    cursor: "pointer",
+    filter: `drop-shadow(0px 0px ${
+      6 + spot.weight * 4
+    }px ${getCrowdColor(spot.weight)})`,
+    transition: "all 0.3s ease"
+  }}
+/>
 
-            onClick={() => setSelectedSpot(spot)}
-            fill={getCrowdColor(spot.weight)}
-          />
-        </Marker>
+    {/* {(spot.weight > 2 || selectedSpot?.name === spot.name) && (
+      <text
+        y={-10}
+        textAnchor="middle"
+        style={{
+          fontSize: "10px",
+          fontWeight: 600,
+          fill: "#111827",
+          pointerEvents: "none"
+        }}
+      >
+        {spot.name}
+      </text>
+    )} */}
+  </g>
+</Marker>
       ))}
         {selectedSpot && (
           <Marker coordinates={[selectedSpot.lng, selectedSpot.lat]}>
