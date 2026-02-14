@@ -7,10 +7,12 @@ import {
   Marker,
 } from "react-simple-maps";
 import { getCrowdColor } from '@/lib/mapStyles'
+import SpotInfoCard from "../spot-info/SpotInfoCard";
 
 const geoUrl = "/maps/india.geojson";
 
 export type Spot = {
+  reason?: string;
   name: string;
   lat: number;
   lng: number;
@@ -20,9 +22,13 @@ export type Spot = {
 export default function MapView({
   spots,
   dimmed = false,
+  selectedSpot,
+  setSelectedSpot,
 }: {
   spots: Spot[],
   dimmed?: boolean;
+  selectedSpot: Spot | null;
+  setSelectedSpot: (spot: Spot | null) => void;
 }) {
   return (
     <div className={dimmed ? "opacity-60" : ""}>
@@ -55,12 +61,28 @@ export default function MapView({
           coordinates={[spot.lng, spot.lat]}
         >
           <circle
-            r={6 + spot.weight * 10}
+            r={
+              selectedSpot?.name === spot.name
+                ? 8 + spot.weight * 6
+                : 4 + spot.weight * 6
+            }
+
+            onClick={() => setSelectedSpot(spot)}
             fill={getCrowdColor(spot.weight)}
           />
         </Marker>
       ))}
+      {selectedSpot && (
+        <Marker coordinates={[selectedSpot.lng, selectedSpot.lat]}>
+          <SpotInfoCard
+            spot={selectedSpot}
+            onClose={() => setSelectedSpot(null)}
+          />
+        </Marker>
+      )}
+
     </ComposableMap>
+      
     </div>
   );
 }

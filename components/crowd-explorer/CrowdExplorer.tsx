@@ -13,6 +13,8 @@ export default function CrowdExplorer({ initialData } : { initialData: Spot[] })
   const visibleSpots = showOffBeatOnly
   ? spots.filter((spot) => spot.weight < 0.4)
   : spots;
+  const [selectedSpot, setSelectedSpot] = useState<Spot | null>(null);
+
 
 
   async function handleTimelineChange(newYear:number, newMonth:number) {
@@ -46,7 +48,7 @@ export default function CrowdExplorer({ initialData } : { initialData: Spot[] })
 
 
 
-      <MapView spots={visibleSpots} dimmed={loading} />
+      <MapView spots={visibleSpots} dimmed={loading} selectedSpot={selectedSpot} setSelectedSpot={setSelectedSpot} />
     </div>
   );
 }
