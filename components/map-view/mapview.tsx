@@ -11,6 +11,7 @@ import { useMapContext } from "react-simple-maps";
 import { getCrowdColor } from '@/lib/mapStyles'
 import SpotInfoCard from "../spot-info/SpotInfoCard";
 import MapOverlayBubble from "../spot-info/SpotInfoCard";
+import LoadingOverlay from "../loading-overlay/LoadingOverlay";
 
 const geoUrl = "/maps/india.geojson";
 
@@ -82,7 +83,16 @@ export default function MapView({
         )}
 
     </ComposableMap>
-      
+      {dimmed && (
+  <div className="absolute inset-0 z-30 
+                  bg-black/30 backdrop-blur-sm
+                  flex items-center justify-center
+                  transition-opacity duration-300">
+
+    <LoadingOverlay />
+
+  </div>
+)}
     </div>
   );
 }
