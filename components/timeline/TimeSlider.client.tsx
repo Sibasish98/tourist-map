@@ -40,7 +40,7 @@ export  function TimeSlider({ year, month, onChange, disabled, showOffBeatOnly, 
       <MonthSlider month={month} onChange={(newMonth) => onChange && onChange(year, newMonth)} />
 
       <div className="text-sm text-white/70">
-        Selected: {year}, {month + 1}
+        Selected: {year}
       </div>
 
       <div className="absolute bottom-4 right-4 bg-black/60 text-white p-3 rounded text-sm">

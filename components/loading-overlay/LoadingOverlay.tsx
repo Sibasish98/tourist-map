@@ -20,7 +20,7 @@ export default function LoadingOverlay() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center gap-4 text-white">
+    <div className="flex flex-col items-center gap-4 text-white z-500">
 
       {/* Animated Pulse Orb */}
       <div className="relative">

@@ -13,11 +13,11 @@ export function YearSlider({ year, onChange }: Props) {
 
   return (
     <div>
-      <label className="text-sm text-white/70">Year</label>
+      <label className="ext-sm text-white/70">Year</label>
 
       <div className="flex justify-between text-sm mb-1">
         <span>{MIN_YEAR}</span>
-        <span className="font-medium">{year}</span>
+        <span className="px-4 py-1.5 rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 text-black font-semibold shadow-md">{year}</span>
         <span>{MAX_YEAR}</span>
       </div>
 

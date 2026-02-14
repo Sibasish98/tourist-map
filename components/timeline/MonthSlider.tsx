@@ -19,7 +19,7 @@ export function MonthSlider({ month, onChange }: Props) {
 
       <div className="flex justify-between text-sm mb-1">
         <span>Jan</span>
-        <span className="font-medium">{MONTHS[month]}</span>
+        <span className="px-4 py-1.5 rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 text-black font-semibold shadow-md">{MONTHS[month]}</span>
         <span>Dec</span>
       </div>
 

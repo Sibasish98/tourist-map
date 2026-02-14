@@ -15,7 +15,7 @@ export default function MapOverlayBubble({ spot }: { spot: Spot }) {
         />
 
         <div className="pl-2">
-          <div className="font-semibold text-base">
+          <div className="font-semibold text-sm">
             {spot.name}
           </div>
 
