@@ -40,7 +40,7 @@ export default function MapView({
       projection="geoMercator"
       projectionConfig={{
         center: [82, 22],
-        scale: 1000,
+        scale: 900,
       }}
       className="w-full h-full"
     >
