@@ -15,7 +15,7 @@ type Props = {
 export function MonthSlider({ month, onChange }: Props) {
   return (
     <div>
-      <label className="text-xs text-gray-600">Month</label>
+      <label className="text-sm text-white/70">Month</label>
 
       <div className="flex justify-between text-sm mb-1">
         <span>Jan</span>

@@ -32,14 +32,14 @@ export  function TimeSlider({ year, month, onChange, disabled, showOffBeatOnly, 
 
   return (
     <TimelineCard>
-      <h3 className="text-sm font-semibold text-gray-800">
+      <h3 className="text-lg font-semibold text-white">
         Explore Tourist Crowd
       </h3>
 
       <YearSlider year={year} onChange={(newYear) => onChange && onChange(newYear, month)} />
       <MonthSlider month={month} onChange={(newMonth) => onChange && onChange(year, newMonth)} />
 
-      <div className="text-xs text-gray-600 pt-1">
+      <div className="text-sm text-white/70">
         Selected: {year}, {month + 1}
       </div>
 

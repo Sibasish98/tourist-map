@@ -13,7 +13,7 @@ export function YearSlider({ year, onChange }: Props) {
 
   return (
     <div>
-      <label className="text-xs text-gray-600">Year</label>
+      <label className="text-sm text-white/70">Year</label>
 
       <div className="flex justify-between text-sm mb-1">
         <span>{MIN_YEAR}</span>
