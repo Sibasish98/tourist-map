@@ -1,60 +1,75 @@
 {
-    "spots": [
-        {
-            "name": "Jaipur, Rajasthan",
-            "lat": 26.9124,
-            "lng": 75.7873,
-            "weight": 0.95,
-            "reason": "January offers pleasant, cool, and dry weather, ideal for exploring the city's magnificent forts, palaces, and vibrant markets. It's peak tourist season."
-        },
-        {
-            "name": "Udaipur, Rajasthan",
-            "lat": 24.5854,
-            "lng": 73.7125,
-            "weight": 0.95,
-            "reason": "Known as the 'City of Lakes' and 'Venice of the East', Udaipur enjoys cool and comfortable weather in January, perfect for boat rides and visiting romantic palaces."
-        },
-        {
-            "name": "Goa",
-            "lat": 15.2993,
-            "lng": 74.124,
-            "weight": 0.9,
-            "reason": "January provides ideal beach weather with clear skies and pleasant temperatures, perfect for relaxing on the beaches, water sports, and enjoying the vibrant nightlife."
-        },
-        {
-            "name": "Alleppey (Alappuzha), Kerala",
-            "lat": 9.4981,
-            "lng": 76.3388,
-            "weight": 0.95,
-            "reason": "The backwaters of Kerala are at their most serene and beautiful in January. The cool, comfortable weather is perfect for houseboat cruises and exploring the lush landscape."
-        },
-        {
-            "name": "Agra, Uttar Pradesh",
-            "lat": 27.1767,
-            "lng": 78.0078,
-            "weight": 0.9,
-            "reason": "Home to the iconic Taj Mahal, Agra in January has cool and crisp weather, excellent for sightseeing historical monuments. Mornings can be foggy but generally clear by midday."
-        },
-        {
-            "name": "Varanasi, Uttar Pradesh",
-            "lat": 25.3176,
-            "lng": 82.9739,
-            "weight": 0.9,
-            "reason": "This ancient spiritual city on the Ganges offers cool and pleasant weather in January, making it ideal for exploring the ghats, temples, and experiencing its unique culture."
-        },
-        {
-            "name": "Port Blair, Andaman & Nicobar Islands",
-            "lat": 11.6234,
-            "lng": 92.7265,
-            "weight": 0.95,
-            "reason": "January is considered the best time to visit with calm seas, clear skies, and perfect weather for island hopping, snorkeling, diving, and enjoying pristine beaches."
-        },
-        {
-            "name": "Delhi",
-            "lat": 28.7041,
-            "lng": 77.1025,
-            "weight": 0.85,
-            "reason": "India's capital city experiences cool and crisp weather in January, making it excellent for exploring its historical sites, museums, and diverse culinary scene. Mornings can be chilly or foggy."
-        }
-    ]
+  "spots": [
+    {
+  "name": "Tirthan Valley, Himachal Pradesh",
+  "lat": 31.6382,
+  "lng": 77.3446,
+  "weight": 0.28,
+  "reason": "A peaceful Himalayan escape with limited tourist inflow in November. Ideal for nature walks and offbeat mountain experiences away from mainstream hill station crowds."
+},
+    {
+      "name": "Goa",
+      "lat": 15.2993,
+      "lng": 74.1240,
+      "weight": 0.92,
+      "reason": "November marks the start of peak beach season with clear skies and vibrant nightlife. Tourist footfall rises sharply as the festive season approaches."
+    },
+    {
+      "name": "Jaipur, Rajasthan",
+      "lat": 26.9124,
+      "lng": 75.7873,
+      "weight": 0.85,
+      "reason": "Pleasant winter weather makes it ideal for exploring forts and palaces. Wedding season and cultural tourism increase visitor numbers."
+    },
+    {
+      "name": "Varanasi, Uttar Pradesh",
+      "lat": 25.3176,
+      "lng": 82.9739,
+      "weight": 0.72,
+      "reason": "Comfortable temperatures attract spiritual and cultural tourists. Evening Ganga Aarti sees strong attendance."
+    },
+    {
+      "name": "Hampi, Karnataka",
+      "lat": 15.3350,
+      "lng": 76.4600,
+      "weight": 0.55,
+      "reason": "The cooler post-monsoon climate makes it a good time for heritage exploration, though crowds remain moderate."
+    },
+    {
+      "name": "Spiti Valley, Himachal Pradesh",
+      "lat": 32.2460,
+      "lng": 78.0340,
+      "weight": 0.35,
+      "reason": "Remote terrain and limited accessibility keep tourist volume relatively low despite scenic beauty."
+    },
+    {
+      "name": "Ziro Valley, Arunachal Pradesh",
+      "lat": 27.5880,
+      "lng": 93.8280,
+      "weight": 0.22,
+      "reason": "An offbeat destination offering tranquil landscapes and minimal crowding. Ideal for travelers seeking peaceful exploration."
+    },
+    {
+      "name": "Lakshadweep",
+      "lat": 10.5667,
+      "lng": 72.6417,
+      "weight": 0.18,
+      "reason": "Restricted permits and remote island access keep visitor numbers low, despite excellent diving and clear waters."
+    },
+    {
+      "name": "Rishikesh, Uttarakhand",
+      "lat": 30.0869,
+      "lng": 78.2676,
+      "weight": 0.60,
+      "reason": "Adventure tourism and spiritual retreats see steady activity during the pleasant early winter season."
+    },
+    {
+  "name": "Kanha National Park, Madhya Pradesh",
+  "lat": 22.3344,
+  "lng": 80.6115,
+  "weight": 0.45,
+  "reason": "Wildlife safaris resume post-monsoon with moderate tourist activity during early winter."
+
+    }
+  ]
 }
